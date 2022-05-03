@@ -1,6 +1,6 @@
 # action.yml
-name: 'Run Java Checkstyle'
-description: 'Run java checkstyle with reviewdog'
+name: 'Run Scala Checkstyle'
+description: 'Run scalastyle to checkstyle code'
 branding:
   icon: 'code'  
   color: 'red'
@@ -8,38 +8,15 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN.'
     default: '${{ github.token }}'
-  level:
-    description: 'Report level for reviewdog [info,warning,error]'
-    default: 'info'
-  reporter:
-    description: 'Reporter of reviewdog command [github-pr-check,github-pr-review]'
-    default: 'github-pr-check'
-  filter_mode:
-      description: |
-        Filtering for the reviewdog command [added,diff_context,file,nofilter].
-        Default is `added`.
-      default: 'added'
-  fail_on_error:
-    description: |
-      Exit code for reviewdog when errors are found [true,false]
-      Default is `false`.
-    default: 'false'
-  checkstyle_config:
-    description: 'Checkstyle config file'
-    required: true
-    default: 'google_checks.xml'
-  checkstyle_version:
-    description: 'Checkstyle version'
-    default: '8.40'
+  version:
+    description: 'Scalastyle version to be used [2.10,2.11,2.12]'
+    default: '2.12'
   workdir:
-    description: 'Working directory relative to the root directory.'
+    description: 'Directory with scala code'
     default: '.'
-  tool_name:
-    description: 'Tool name to use for reviewdog reporter'
-    default: 'reviewdog'
-  properties_file:
-    description: 'Properties file relative to the root directory.'
-    default: ''
+  scalastyle_path:
+    description: 'Path to scalastyle configuration'
+    default: 'NONE'
 runs:
   using: 'docker'
   image: 'Dockerfile'
