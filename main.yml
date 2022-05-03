@@ -1,0 +1,13 @@
+name: Build and Test
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest 
+    - name: Hello Job
+      uses: andre-santos-fd/java_checkstyle_action@v1
