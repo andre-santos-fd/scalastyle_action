@@ -26,6 +26,9 @@ inputs:
   reporter:
     description: 'Reporter of reviewdog command [github-pr-check,github-pr-review]'
     default: 'github-check'
+  debug:
+    description: 'Enable or disable debug [true,false]'
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -11,6 +11,11 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 wget -O - -q https://oss.sonatype.org/content/repositories/releases/org/scalastyle/scalastyle_${INPUT_CHECKSTYLE_VERSION}/1.0.0/scalastyle_${INPUT_CHECKSTYLE_VERSION}-1.0.0-batch.jar > /scalastyle.jar
 wget -O - -q http://www.scalastyle.org/scalastyle_config.xml > /scalastyle_config.xml
 
+
+if [ ${INPUT_DEBUG} == "true" ]; then
+  exec java -jar /scalastyle.jar --config /scalastyle_config.xml "${INPUT_WORKDIR}"
+fi
+
 exec java -jar /scalastyle.jar --config /scalastyle_config.xml "${INPUT_WORKDIR}" -f xml \
  | reviewdog -f=scalastyle \
       -name="${INPUT_TOOL_NAME}" \
