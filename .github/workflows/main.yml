@@ -12,5 +12,6 @@ jobs:
         uses: andre-santos-fd/scalastyle_action@main
         with:
           tool_name: 'scalastyle'
-          reporter: 'github-pr-review'          
+          reporter: 'github-pr-review'   
+          github_token: ${{ secrets.github_token }}
           debug: "false"
