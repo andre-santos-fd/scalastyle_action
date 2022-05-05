@@ -17,7 +17,7 @@ if [ ${INPUT_DEBUG} == "true" ]; then
 fi
 
 exec java -jar /scalastyle.jar --config /scalastyle_config.xml "${INPUT_WORKDIR}" \
- | reviewdog -f=scalastyle \
+ | reviewdog -f=scalastyle -diff="git diff FETCH_HEAD " \
       -name="${INPUT_TOOL_NAME}" \
       -reporter="${INPUT_REPORTER:-github-check}" \
       -filter-mode="${INPUT_FILTER_MODE:-added}" \
