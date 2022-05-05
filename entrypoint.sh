@@ -22,7 +22,8 @@ exec java -jar /scalastyle.jar --config /scalastyle_config.xml "${INPUT_WORKDIR}
       -reporter="${INPUT_REPORTER:-github-check}" \
       -filter-mode="${INPUT_FILTER_MODE:-added}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR:-false}" \
-      -level="${INPUT_LEVEL}"
+      -level="${INPUT_LEVEL}" \
+      -tee
 
 #if [ "${INPUT_SCALASTYLE_PATH}" == "NONE" ]; then
 #  wget -O - -q http://www.scalastyle.org/scalastyle_config.xml > /scalastyle_config.xml
