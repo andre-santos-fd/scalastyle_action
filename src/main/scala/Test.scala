@@ -14,7 +14,7 @@ class Test {
     def y: Int = _y
 
     def y_=(newValue: Int): Unit = {
-      if (newValue < bound) _y = newValue else printWarning()
+          if (newValue < bound) _y = newValue else printWarning()
     }
 
     private def printWarning() = println("WARNING: Out of bounds")
