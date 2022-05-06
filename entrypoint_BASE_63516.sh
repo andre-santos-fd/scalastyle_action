@@ -17,7 +17,7 @@ if [ ${INPUT_DEBUG} == "true" ]; then
 fi
 
 exec  sbt clean compile scalafix \
- | reviewdog -f=scalastyle -diff="git diff FETCH_HEAD" \
+ | reviewdog -f=scalastyle \
       -name="${INPUT_TOOL_NAME}" \
       -reporter="${INPUT_REPORTER:-github-check}" \
       -filter-mode="${INPUT_FILTER_MODE:-added}" \

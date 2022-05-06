@@ -16,7 +16,11 @@ if [ ${INPUT_DEBUG} == "true" ]; then
   exec java -jar /scalastyle.jar --config /scalastyle_config.xml "${INPUT_WORKDIR}"
 fi
 
+<<<<<<< HEAD
+exec java -jar /scalastyle.jar --config /scalastyle_config.xml "${INPUT_WORKDIR}" \
+=======
 exec  sbt clean compile scalafix \
+>>>>>>> 7e4428d (Add sbt clean compile scalafix)
  | reviewdog -f=scalastyle -diff="git diff FETCH_HEAD" \
       -name="${INPUT_TOOL_NAME}" \
       -reporter="${INPUT_REPORTER:-github-check}" \
