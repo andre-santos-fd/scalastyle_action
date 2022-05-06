@@ -1,3 +1,6 @@
+import scala.BigInt
+
+
 class Test {
 
   class Point {
