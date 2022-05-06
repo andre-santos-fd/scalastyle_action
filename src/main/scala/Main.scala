@@ -1,5 +1,5 @@
 object Main {
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]){
     println("-" * 50)
 
     println("hello world")
